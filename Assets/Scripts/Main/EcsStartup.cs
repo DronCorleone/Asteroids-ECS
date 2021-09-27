@@ -7,10 +7,10 @@ public class EcsStartup : MonoBehaviour
     [SerializeField] private Configuration _config;
     [SerializeField] private SceneData _sceneData;
 
-    EcsWorld _world;
-    EcsSystems _systems;
+    private EcsWorld _world;
+    private EcsSystems _systems;
 
-    void Start()
+    private void Start()
     {
         // void can be switched to IEnumerator for support coroutines.
 
@@ -37,12 +37,12 @@ public class EcsStartup : MonoBehaviour
             .Init();
     }
 
-    void Update()
+    private void Update()
     {
         _systems?.Run();
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         if (_systems != null)
         {

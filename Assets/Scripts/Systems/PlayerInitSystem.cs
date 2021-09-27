@@ -26,5 +26,7 @@ public class PlayerInitSystem : IEcsInitSystem
         gameField.MaxX = _config.MaxX;
         gameField.MinY = _config.MinY;
         gameField.MaxY = _config.MaxY;
+
+        playerGO.GetComponent<PlayerView>().Entity = playerEntity;
     }
 }
