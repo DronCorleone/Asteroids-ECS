@@ -2,7 +2,7 @@ using Leopotam.Ecs;
 using UnityEngine;
 
 
-sealed class EcsStartup : MonoBehaviour
+public class EcsStartup : MonoBehaviour
 {
     [SerializeField] private Configuration _config;
     [SerializeField] private SceneData _sceneData;
@@ -23,6 +23,8 @@ sealed class EcsStartup : MonoBehaviour
         _systems
             // register your systems here
             .Add(new PlayerInitSystem())
+            .Add(new PlayerInputSystem())
+            .Add(new PlayerMoveSystem())
 
             // register one-frame components (order is important), for example:
             // .OneFrame<TestComponent1> ()
