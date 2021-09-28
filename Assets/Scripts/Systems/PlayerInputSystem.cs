@@ -5,6 +5,7 @@ using Leopotam.Ecs;
 public class PlayerInputSystem : IEcsRunSystem
 {
     private EcsFilter<PlayerInputData> _filter;
+    private Configuration _config;
 
     private string _hor = "Horizontal";
     private string _vert = "Vertical";
@@ -25,6 +26,9 @@ public class PlayerInputSystem : IEcsRunSystem
             }
 
             input.RotateInput = Input.GetAxis(_hor);
+
+            input.BulletInput = Input.GetKeyDown(_config.BulletFire);
+            input.LaserInput = Input.GetKeyDown(_config.LaserFire);
         }
     }
 }

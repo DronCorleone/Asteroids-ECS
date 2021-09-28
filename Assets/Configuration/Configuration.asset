@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 4653453946265806606, guid: 73adcc8b5f9840647bff7b9fc1291e64, type: 3}
   PlayerSpeed: 10
+  BulletPrefab: {fileID: 5726345258246076010, guid: fa055df0552ca32469bb323aa5d6a96d, type: 3}
+  LaserPrefab: {fileID: 222781166951926607, guid: d14612565671ee04da8c3b5eacb63f6d, type: 3}
+  LaserMagazine: 3
+  LaserCooldown: 3
   MinX: -8.9
   MaxX: 8.9
   MinY: -5
   MaxY: 5
+  BulletFire: 32
+  LaserFire: 306
