@@ -18,6 +18,8 @@ MonoBehaviour:
   LaserPrefab: {fileID: 222781166951926607, guid: d14612565671ee04da8c3b5eacb63f6d, type: 3}
   LaserMagazine: 3
   LaserCooldown: 3
+  LaserLifetime: 0.1
+  BulletSpeed: 20
   MinX: -8.9
   MaxX: 8.9
   MinY: -5

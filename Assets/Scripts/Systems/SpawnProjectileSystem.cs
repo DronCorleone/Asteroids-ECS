@@ -29,6 +29,20 @@ public class SpawnProjectileSystem : IEcsRunSystem
 
                 bulletGO.GetComponent<BulletView>().Entity = bulletEntity;
             }
+
+            if (input.LaserInput == true)
+            {
+                EcsEntity laserEntity = _world.NewEntity();
+
+                ref var laser = ref laserEntity.Get<LaserProjectile>();
+
+                GameObject laserGO = Object.Instantiate(_config.LaserPrefab, player.BulletSpawnPoint.position, player.BulletSpawnPoint.rotation);
+
+                laser.Transform = laserGO.transform;
+                laser.Lifetime = _config.LaserLifetime;
+
+                laserGO.GetComponent<LaserView>().Entity = laserEntity;
+            }
         }
     }
 }
