@@ -13,6 +13,7 @@ public class Configuration : ScriptableObject
     public GameObject LaserPrefab;
     public int LaserMagazine;
     public float LaserCooldown;
+    public float BulletSpeed;
 
     [Header("Game field")]
     public float MinX;

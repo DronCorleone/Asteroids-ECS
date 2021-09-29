@@ -25,6 +25,11 @@ public class EcsStartup : MonoBehaviour
             .Add(new PlayerInitSystem())
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
+            .Add(new SpawnProjectileSystem())
+            .Add(new BulletMoveSystem())
+
+
+            .Add(new DestroyEntitySystem())
 
             // register one-frame components (order is important), for example:
             // .OneFrame<TestComponent1> ()
