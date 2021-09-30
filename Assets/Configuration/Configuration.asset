@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 4653453946265806606, guid: 73adcc8b5f9840647bff7b9fc1291e64, type: 3}
   PlayerSpeed: 10
-  PlayerRotationSpeed: 100
+  PlayerRotationSpeed: 200
   BulletPrefab: {fileID: 5726345258246076010, guid: fa055df0552ca32469bb323aa5d6a96d, type: 3}
   LaserPrefab: {fileID: 222781166951926607, guid: d14612565671ee04da8c3b5eacb63f6d, type: 3}
   LaserMagazine: 3
@@ -28,16 +28,20 @@ MonoBehaviour:
   - {fileID: 2865499370732148765, guid: 042b9acf95f669147b397df8b9677852, type: 3}
   - {fileID: 226332274989435042, guid: b47f9b5942876354cbad6af56418afa6, type: 3}
   UFOPrefab: {fileID: 2196900304082198578, guid: e7cffce0579de6448a18898adab4e783, type: 3}
-  BigAsteroidSpeed: 5
-  SmallAsteroidSpeed: 10
-  UFOSpeed: 8
+  BigAsteroidSpeed: 2
+  SmallAsteroidSpeed: 5
+  AsteroidRotationSpeedMin: 50
+  AsteroidRotationSpeedMax: 0
+  UFOSpeed: 5
+  AsteroidSpawnTimer: 0.4
+  UFOSpawnTimer: 20
   MinX: -8.9
   MaxX: 8.9
   MinY: -5
   MaxY: 5
   BulletFire: 32
   LaserFire: 306
-  EnemyMinX: 0
-  EnemyMaxX: 0
-  EnemyMinY: 0
-  EnemyMaxY: 0
+  EnemyMinX: -12
+  EnemyMaxX: 12
+  EnemyMinY: -8
+  EnemyMaxY: 8

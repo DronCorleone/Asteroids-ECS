@@ -10,8 +10,6 @@ public class BulletMoveSystem : IEcsRunSystem
     {
         foreach (var i in _filter)
         {
-            EcsEntity bulletEntity = _filter.GetEntity(i);
-
             ref var bullet = ref _filter.Get1(i);
 
             bullet.Transform.Translate(Vector3.up * bullet.Speed * Time.deltaTime);
@@ -21,7 +19,7 @@ public class BulletMoveSystem : IEcsRunSystem
                 bullet.Transform.position.y > _config.MaxY ||
                 bullet.Transform.position.y < _config.MinY)
             {
-                ref var destroy = ref bulletEntity.Get<DestroyWithGO>();
+                ref var destroy = ref _filter.GetEntity(i).Get<DestroyWithGO>();
 
                 destroy.GameObject = bullet.Transform.gameObject;
             }

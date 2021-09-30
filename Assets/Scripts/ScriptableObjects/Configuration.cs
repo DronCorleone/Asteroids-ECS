@@ -23,7 +23,11 @@ public class Configuration : ScriptableObject
     public GameObject UFOPrefab;
     public float BigAsteroidSpeed;
     public float SmallAsteroidSpeed;
+    public float AsteroidRotationSpeedMin;
+    public float AsteroidRotationSpeedMax;
     public float UFOSpeed;
+    public float AsteroidSpawnTimer;
+    public float UFOSpawnTimer;
 
     [Header("Game field")]
     public float MinX;

@@ -3,8 +3,7 @@ using Leopotam.Ecs;
 
 public class DestroyEntitySystem : IEcsRunSystem
 {
-    private EcsFilter<DestroyWithGO>.Exclude<BigAsteroid> _filter;
-    private EcsFilter<DestroyWithGO, BigAsteroid> _filterBigAsteroid;
+    private EcsFilter<DestroyWithGO> _filter;
 
     public void Run()
     {
@@ -12,14 +11,6 @@ public class DestroyEntitySystem : IEcsRunSystem
         {
             Object.Destroy(_filter.Get1(i).GameObject);
             _filter.GetEntity(i).Destroy();
-        }
-
-        foreach (var i in _filterBigAsteroid)
-        {
-            Object.Destroy(_filter.Get1(i).GameObject);
-            _filter.GetEntity(i).Destroy();
-
-            //TODO spawn little asteroids
         }
     }
 }

@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public struct BigAsteroid
+public struct AsteroidSmall
 {
     public Transform Transform;
     public Vector3 Direction;
     public float Speed;
+    public float RotationSpeed;
 }

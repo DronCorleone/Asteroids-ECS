@@ -25,11 +25,13 @@ public class EcsStartup : MonoBehaviour
             .Add(new PlayerInitSystem())
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
-            .Add(new SpawnProjectileSystem())
+            .Add(new ProjectileSpawnSystem())
             .Add(new BulletMoveSystem())
             .Add(new LaserMagazineInitSystem())
             .Add(new LaserLifeTimeSystem())
-
+            .Add(new EnemySpawnSystem())
+            .Add(new AsteroidMoveSystem())
+            .Add(new AsteroidBreakSystem())
 
             .Add(new DestroyEntitySystem())
 

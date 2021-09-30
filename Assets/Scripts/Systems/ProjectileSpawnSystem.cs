@@ -2,7 +2,7 @@ using UnityEngine;
 using Leopotam.Ecs;
 
 
-public class SpawnProjectileSystem : IEcsRunSystem
+public class ProjectileSpawnSystem : IEcsRunSystem
 {
     private EcsWorld _world = null;
     private EcsFilter<PlayerInputData, Player> _filter;
