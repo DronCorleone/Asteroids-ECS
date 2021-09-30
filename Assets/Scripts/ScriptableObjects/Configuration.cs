@@ -7,6 +7,7 @@ public class Configuration : ScriptableObject
     [Header("Player")]
     public GameObject PlayerPrefab;
     public float PlayerSpeed;
+    public float PlayerRotationSpeed;
 
     [Header("Weapon")]
     public GameObject BulletPrefab;
@@ -15,6 +16,14 @@ public class Configuration : ScriptableObject
     public float LaserCooldown;
     public float LaserLifetime;
     public float BulletSpeed;
+
+    [Header("Enemies")]
+    public GameObject[] BigAsteroidPrefabs;
+    public GameObject[] SmallAsteroidPrefabs;
+    public GameObject UFOPrefab;
+    public float BigAsteroidSpeed;
+    public float SmallAsteroidSpeed;
+    public float UFOSpeed;
 
     [Header("Game field")]
     public float MinX;

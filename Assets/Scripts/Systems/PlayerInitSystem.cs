@@ -18,8 +18,9 @@ public class PlayerInitSystem : IEcsInitSystem
 
         GameObject playerGO = Object.Instantiate(_config.PlayerPrefab, _sceneData.PlayerSpawnPoint.position, Quaternion.identity);
 
-        player.PlayerTransform = playerGO.transform;
-        player.PlayerSpeed = _config.PlayerSpeed;
+        player.Transform = playerGO.transform;
+        player.Speed = _config.PlayerSpeed;
+        player.RotationSpeed = _config.PlayerRotationSpeed;
         player.BulletSpawnPoint = playerGO.GetComponent<PlayerView>().BulletSpawnPoint;
 
         gameField.MinX = _config.MinX;

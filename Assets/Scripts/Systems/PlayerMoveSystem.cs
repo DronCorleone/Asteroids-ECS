@@ -14,24 +14,24 @@ public class PlayerMoveSystem : IEcsRunSystem
             ref var input = ref _filter.Get2(i);
             ref var field = ref _filter.Get3(i);
 
-            player.PlayerTransform.Translate(Vector3.up * input.MoveInput * player.PlayerSpeed * Time.deltaTime);
-            player.PlayerTransform.Rotate(player.PlayerTransform.forward, input.RotateInput * player.PlayerSpeed * Time.deltaTime * -10.0f);
+            player.Transform.Translate(Vector3.up * input.MoveInput * player.Speed * Time.deltaTime);
+            player.Transform.Rotate(player.Transform.forward, input.RotateInput * player.RotationSpeed * Time.deltaTime * -1.0f);
 
-            if (player.PlayerTransform.position.x > field.MaxX)
+            if (player.Transform.position.x > field.MaxX)
             {
-                player.PlayerTransform.position = new Vector3(field.MinX, player.PlayerTransform.position.y, player.PlayerTransform.position.z);
+                player.Transform.position = new Vector3(field.MinX, player.Transform.position.y, player.Transform.position.z);
             }
-            if (player.PlayerTransform.position.x < field.MinX)
+            if (player.Transform.position.x < field.MinX)
             {
-                player.PlayerTransform.position = new Vector3(field.MaxX, player.PlayerTransform.position.y, player.PlayerTransform.position.z);
+                player.Transform.position = new Vector3(field.MaxX, player.Transform.position.y, player.Transform.position.z);
             }
-            if (player.PlayerTransform.position.y > field.MaxY)
+            if (player.Transform.position.y > field.MaxY)
             {
-                player.PlayerTransform.position = new Vector3(player.PlayerTransform.position.x, field.MinY, player.PlayerTransform.position.z);
+                player.Transform.position = new Vector3(player.Transform.position.x, field.MinY, player.Transform.position.z);
             }
-            if (player.PlayerTransform.position.y < field.MinY)
+            if (player.Transform.position.y < field.MinY)
             {
-                player.PlayerTransform.position = new Vector3(player.PlayerTransform.position.x, field.MaxY, player.PlayerTransform.position.z);
+                player.Transform.position = new Vector3(player.Transform.position.x, field.MaxY, player.Transform.position.z);
             }
         }
     }
