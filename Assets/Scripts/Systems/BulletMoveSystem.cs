@@ -21,7 +21,9 @@ public class BulletMoveSystem : IEcsRunSystem
                 bullet.Transform.position.y > _config.MaxY ||
                 bullet.Transform.position.y < _config.MinY)
             {
-                bulletEntity.Get<Destroy>();
+                ref var destroy = ref bulletEntity.Get<DestroyWithGO>();
+
+                destroy.GameObject = bullet.Transform.gameObject;
             }
         }
     }

@@ -34,4 +34,10 @@ public class Configuration : ScriptableObject
     [Header("Input config")]
     public KeyCode BulletFire;
     public KeyCode LaserFire;
+
+    [Header("Enemy moving bounds")]
+    public float EnemyMinX;
+    public float EnemyMaxX;
+    public float EnemyMinY;
+    public float EnemyMaxY;
 }

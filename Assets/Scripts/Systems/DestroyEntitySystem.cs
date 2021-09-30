@@ -3,31 +3,23 @@ using Leopotam.Ecs;
 
 public class DestroyEntitySystem : IEcsRunSystem
 {
-    private EcsFilter<Destroy, Bullet> _filterBullet;
-    private EcsFilter<Destroy, LaserProjectile> _filterLaser;
+    private EcsFilter<DestroyWithGO>.Exclude<BigAsteroid> _filter;
+    private EcsFilter<DestroyWithGO, BigAsteroid> _filterBigAsteroid;
 
     public void Run()
     {
-        foreach (var i in _filterBullet)
+        foreach (var i in _filter)
         {
-            EcsEntity bulletEntity = _filterBullet.GetEntity(i);
-
-            ref var bullet = ref _filterBullet.Get2(i);
-
-            Object.Destroy(bullet.Transform.gameObject);
-
-            bulletEntity.Destroy();
+            Object.Destroy(_filter.Get1(i).GameObject);
+            _filter.GetEntity(i).Destroy();
         }
 
-        foreach (var i in _filterLaser)
+        foreach (var i in _filterBigAsteroid)
         {
-            EcsEntity laserEntity = _filterLaser.GetEntity(i);
+            Object.Destroy(_filter.Get1(i).GameObject);
+            _filter.GetEntity(i).Destroy();
 
-            ref var laser = ref _filterLaser.Get2(i);
-
-            Object.Destroy(laser.Transform.gameObject);
-
-            laserEntity.Destroy();
+            //TODO spawn little asteroids
         }
     }
 }

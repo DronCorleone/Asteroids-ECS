@@ -16,7 +16,9 @@ public class LaserLifeTimeSystem : IEcsRunSystem
 
             if (laser.Lifetime <= 0)
             {
-                _filter.GetEntity(i).Get<Destroy>();
+                ref var destroy = ref _filter.GetEntity(i).Get<DestroyWithGO>();
+
+                destroy.GameObject = laser.Transform.gameObject;
             }
         }
     }
