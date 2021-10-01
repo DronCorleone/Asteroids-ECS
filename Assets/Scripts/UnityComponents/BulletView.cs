@@ -14,10 +14,12 @@ public class BulletView : MonoBehaviour
             if (enemy.Type == EnemyType.BigAsteroid)
             {
                 ref var breaking = ref enemy.Entity.Get<Broken>();
+                ref var hit = ref enemy.Entity.Get<Hit>();
             }
             else
             {
                 ref var destroy = ref enemy.Entity.Get<DestroyWithGO>();
+                ref var hit = ref enemy.Entity.Get<Hit>();
 
                 destroy.GameObject = enemy.gameObject;
             }

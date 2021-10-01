@@ -9,6 +9,11 @@ public class Configuration : ScriptableObject
     public float PlayerSpeed;
     public float PlayerRotationSpeed;
 
+    [Header("Game")]
+    public int ScoreForBigAsteroid;
+    public int ScoreForSmallAsteroid;
+    public int ScoreForUFO;
+
     [Header("Weapon")]
     public GameObject BulletPrefab;
     public GameObject LaserPrefab;
