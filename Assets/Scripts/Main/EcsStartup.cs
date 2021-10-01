@@ -22,7 +22,9 @@ public class EcsStartup : MonoBehaviour
 #endif
         _systems
             // register your systems here
+            .Add(new RuntimeDataInitSystem())
             .Add(new PlayerInitSystem())
+
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
             .Add(new ProjectileSpawnSystem())
@@ -32,6 +34,7 @@ public class EcsStartup : MonoBehaviour
             .Add(new EnemySpawnSystem())
             .Add(new AsteroidMoveSystem())
             .Add(new AsteroidBreakSystem())
+            .Add(new UFOMoveSystem())
 
             .Add(new DestroyEntitySystem())
 

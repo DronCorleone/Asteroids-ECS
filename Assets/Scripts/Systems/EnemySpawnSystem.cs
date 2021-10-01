@@ -45,11 +45,19 @@ public class EnemySpawnSystem : IEcsRunSystem
         bigAsteroidComponent.Transform = asteroidGO.transform;
         bigAsteroidComponent.Direction = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f).normalized;
         bigAsteroidComponent.Speed = _config.BigAsteroidSpeed;
-        bigAsteroidComponent.RotationSpeed = Random.Range(_config.AsteroidRotationSpeedMin, _config.AsteroidRotationSpeedMax);
     }
 
     private void SpawnUFO()
     {
-        //TODO
+        EcsEntity ufoEntity = _world.NewEntity();
+
+        ref var ufoComponent = ref ufoEntity.Get<UFO>();
+
+        Transform spawnPoint = _sceneData.EnemySpawnPoints[Random.Range(0, _sceneData.EnemySpawnPoints.Length - 1)];
+        GameObject ufoGO = Object.Instantiate(_config.UFOPrefab, spawnPoint.position, Quaternion.identity);
+        ufoGO.GetComponent<EnemyView>().Entity = ufoEntity;
+
+        ufoComponent.Transform = ufoGO.transform;
+        ufoComponent.Speed = _config.UFOSpeed;
     }
 }

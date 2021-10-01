@@ -29,12 +29,12 @@ MonoBehaviour:
   - {fileID: 226332274989435042, guid: b47f9b5942876354cbad6af56418afa6, type: 3}
   UFOPrefab: {fileID: 2196900304082198578, guid: e7cffce0579de6448a18898adab4e783, type: 3}
   BigAsteroidSpeed: 2
-  SmallAsteroidSpeed: 5
+  SmallAsteroidSpeed: 3
   AsteroidRotationSpeedMin: 50
-  AsteroidRotationSpeedMax: 0
-  UFOSpeed: 5
+  AsteroidRotationSpeedMax: 100
+  UFOSpeed: 2
   AsteroidSpawnTimer: 0.4
-  UFOSpawnTimer: 20
+  UFOSpawnTimer: 10
   MinX: -8.9
   MaxX: 8.9
   MinY: -5

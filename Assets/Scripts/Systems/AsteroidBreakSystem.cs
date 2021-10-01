@@ -29,7 +29,6 @@ public class AsteroidBreakSystem : IEcsRunSystem
                 asteroidSmall.Speed = _config.SmallAsteroidSpeed;
                 asteroidSmall.Transform = asteroidGO.transform;
                 asteroidSmall.Direction = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f).normalized;
-                asteroidSmall.RotationSpeed = Random.Range(_config.AsteroidRotationSpeedMin, _config.AsteroidRotationSpeedMax);
             }
 
             ref var destroy = ref _filter.GetEntity(i).Get<DestroyWithGO>();

@@ -7,6 +7,8 @@ public class PlayerInitSystem : IEcsInitSystem
     private EcsWorld _world = null;
     private Configuration _config;
     private SceneData _sceneData;
+    
+    private EcsFilter<RuntimeData> _filter;
 
     public void Init()
     {
@@ -29,5 +31,11 @@ public class PlayerInitSystem : IEcsInitSystem
         gameField.MaxY = _config.MaxY;
 
         playerGO.GetComponent<PlayerView>().Entity = playerEntity;
+
+        foreach (var i in _filter)
+        {
+            ref var runtimeData = ref _filter.Get1(i);
+            runtimeData.PlayerTransform = playerGO.transform;
+        }
     }
 }

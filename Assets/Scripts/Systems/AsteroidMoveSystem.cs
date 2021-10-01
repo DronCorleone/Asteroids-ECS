@@ -49,11 +49,6 @@ public class AsteroidMoveSystem : IEcsRunSystem
 
     private void Move(Transform transform, Vector3 direction, float movingSpeed, float rotationSpeed)
     {
-        if (transform == null)
-        {
-            return;
-        }
         transform.Translate(direction * movingSpeed * Time.deltaTime);
-        //transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
     }
 }
