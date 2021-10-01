@@ -49,4 +49,7 @@ public class Configuration : ScriptableObject
     public float EnemyMaxX;
     public float EnemyMinY;
     public float EnemyMaxY;
+
+    [Header("UI")]
+    public GameObject UIPrefab;
 }

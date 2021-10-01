@@ -48,3 +48,4 @@ MonoBehaviour:
   EnemyMaxX: 12
   EnemyMinY: -8
   EnemyMaxY: 8
+  UIPrefab: {fileID: 6892239179453525517, guid: dfc75c6ec13ef464cb4ebf188825319a, type: 3}
