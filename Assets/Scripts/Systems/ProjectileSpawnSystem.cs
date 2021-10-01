@@ -6,6 +6,7 @@ public class ProjectileSpawnSystem : IEcsRunSystem
 {
     private EcsWorld _world = null;
     private EcsFilter<PlayerInputData, Player> _filter;
+    private EcsFilter<LaserMagazine> _filterLaser;
     private Configuration _config;
 
     public void Run()
@@ -32,16 +33,26 @@ public class ProjectileSpawnSystem : IEcsRunSystem
 
             if (input.LaserInput == true)
             {
-                EcsEntity laserEntity = _world.NewEntity();
+                foreach (var j in _filterLaser)
+                {
+                    ref var laserMagazine = ref _filterLaser.Get1(i);
 
-                ref var laser = ref laserEntity.Get<LaserProjectile>();
+                    if (laserMagazine.Capacity > 0)
+                    {
+                        EcsEntity laserEntity = _world.NewEntity();
 
-                GameObject laserGO = Object.Instantiate(_config.LaserPrefab, player.BulletSpawnPoint.position, player.BulletSpawnPoint.rotation);
+                        ref var laser = ref laserEntity.Get<LaserProjectile>();
 
-                laser.Transform = laserGO.transform;
-                laser.Lifetime = _config.LaserLifetime;
+                        GameObject laserGO = Object.Instantiate(_config.LaserPrefab, player.BulletSpawnPoint.position, player.BulletSpawnPoint.rotation);
 
-                laserGO.GetComponent<LaserView>().Entity = laserEntity;
+                        laser.Transform = laserGO.transform;
+                        laser.Lifetime = _config.LaserLifetime;
+
+                        laserGO.GetComponent<LaserView>().Entity = laserEntity;
+
+                        laserMagazine.Capacity--;
+                    }
+                }
             }
         }
     }
