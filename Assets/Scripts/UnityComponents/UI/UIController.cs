@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
     private EndGameMenuView _endGameMenu;
 
 
-    private void Awake()
+    private void Start()
     {
         UIEvents.Current.OnButtonStartGame += StartGame;
         UIEvents.Current.OnButtonPauseGame += PauseGame;
@@ -39,6 +39,11 @@ public class UIController : MonoBehaviour
     {
         SwitchUI(UIState.InGame);
         Time.timeScale = 1.0f;
+    }
+
+    public void UpdateUIText(string score, string gps, string angle, string speed, string laserMagazine, string laserTimer)
+    {
+        _inGameUI.UpdateText(score, gps, angle, speed, laserMagazine, laserTimer);
     }
 
     public void AddView(BaseMenuView view)

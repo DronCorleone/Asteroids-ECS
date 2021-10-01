@@ -24,6 +24,7 @@ public class EcsStartup : MonoBehaviour
             // register your systems here
             .Add(new RuntimeDataInitSystem())
             .Add(new PlayerInitSystem())
+            .Add(new UIInitSystem())
 
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
@@ -36,6 +37,7 @@ public class EcsStartup : MonoBehaviour
             .Add(new AsteroidMoveSystem())
             .Add(new AsteroidBreakSystem())
             .Add(new UFOMoveSystem())
+            .Add(new UIControlSystem())
 
             .Add(new DestroyEntitySystem())
 

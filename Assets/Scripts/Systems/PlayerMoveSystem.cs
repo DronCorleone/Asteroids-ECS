@@ -5,6 +5,7 @@ using Leopotam.Ecs;
 public class PlayerMoveSystem : IEcsRunSystem
 {
     private EcsFilter<Player, PlayerInputData, GameField> _filter;
+    private EcsFilter<RuntimeData> _filterData;
 
     public void Run()
     {
@@ -16,6 +17,13 @@ public class PlayerMoveSystem : IEcsRunSystem
 
             player.Transform.Translate(Vector3.up * input.MoveInput * player.Speed * Time.deltaTime);
             player.Transform.Rotate(player.Transform.forward, input.RotateInput * player.RotationSpeed * Time.deltaTime * -1.0f);
+
+            foreach (var j in _filterData)
+            {
+                ref var data = ref _filterData.Get1(i);
+
+                data.PlayerSpeed = input.MoveInput * player.Speed;
+            }
 
             if (player.Transform.position.x > field.MaxX)
             {
