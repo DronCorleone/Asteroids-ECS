@@ -17,6 +17,12 @@ public class EndGameMenuView : BaseMenuView
         _buttonRestart.onClick.AddListener(UIEvents.Current.ButtonRestartGame);
     }
 
+
+    public void SetScore(int score)
+    {
+        _textScore.text = $"YOUR SCORE:{score}";
+    }
+
     public override void Hide()
     {
         if (!IsShow) return;

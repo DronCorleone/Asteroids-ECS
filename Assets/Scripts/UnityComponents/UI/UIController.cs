@@ -46,6 +46,13 @@ public class UIController : MonoBehaviour
         _inGameUI.UpdateText(score, gps, angle, speed, laserMagazine, laserTimer);
     }
 
+    public void GameOver(int score)
+    {
+        SwitchUI(UIState.EndGame);
+        _endGameMenu.SetScore(score);
+        Time.timeScale = 0.0f;
+    }
+
     public void AddView(BaseMenuView view)
     {
         _menues.Add(view);

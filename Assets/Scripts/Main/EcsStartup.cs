@@ -38,6 +38,7 @@ public class EcsStartup : MonoBehaviour
             .Add(new AsteroidBreakSystem())
             .Add(new UFOMoveSystem())
             .Add(new UIControlSystem())
+            .Add(new GameControllerSystem())
 
             .Add(new DestroyEntitySystem())
 
